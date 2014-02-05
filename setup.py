@@ -17,11 +17,11 @@ setup( name='rea-serializers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
     ],
+    dependency_links = [
+        'http://github.com/commoncode/rea/tarball/master#egg=rea-0.0.2',
+    ],
     install_requires = [
         'rea',
         'djangorestframework',
-    ],
-    dependency_links = [
-        'git+git@github.com:commoncode/rea.git#egg=rea',
     ]
 )
