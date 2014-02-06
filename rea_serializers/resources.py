@@ -1,9 +1,9 @@
 from rea.models.resources import Resource
 
-from .core import REASerializer
+from cqrs.mongo import CQRSSerializer
 
 
-class ResourceSerializer(REASerializer):
+class ResourceSerializer(CQRSSerializer):
     """
     Serializer for the `Resource` model
     """

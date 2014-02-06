@@ -1,9 +1,9 @@
 from rea.models.agents import Agent
 
-from .core import REASerializer
+from cqrs.mongo import CQRSSerializer
 
 
-class AgentSerializer(REASerializer):
+class AgentSerializer(CQRSSerializer):
     """
     Serializer for the `SubscriptionContract` model
     """

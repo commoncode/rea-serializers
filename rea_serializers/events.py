@@ -1,13 +1,14 @@
+from cqrs.mongo import CQRSSerializer
+
 from rea.models.events import Event, IncrementLine, DecrementLine
 
-from .core import REASerializer
 from .agents import AgentSerializer
 from .resources import ResourceSerializer
 from .contracts import ContractSerializer
 from .commitments import CommitmentSerializer
 
 
-class IncrementLineSerializer(REASerializer):
+class IncrementLineSerializer(CQRSSerializer):
     """
     Serializer for the `IncrementLine` model
     """
@@ -24,7 +25,7 @@ class IncrementLineSerializer(REASerializer):
         )
 
 
-class DecrementLineSerializer(REASerializer):
+class DecrementLineSerializer(CQRSSerializer):
     """
     Serializer for the `DecrementLine` model
     """
@@ -41,7 +42,7 @@ class DecrementLineSerializer(REASerializer):
         )
 
 
-class EventSerializer(REASerializer):
+class EventSerializer(CQRSSerializer):
     """
     Serializer for the `Event` model
     """

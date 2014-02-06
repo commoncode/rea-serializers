@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
 
-class REASerializer(serializers.ModelSerializer):
+class CQRSSerializer(serializers.ModelSerializer):
 
     mongoID = serializers.CharField(required=False)

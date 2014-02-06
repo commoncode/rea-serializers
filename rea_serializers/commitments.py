@@ -2,13 +2,14 @@ from rea.models.commitments import (
     Commitment, IncrementCommitment, DecrementCommitment
 )
 
+from cqrs.mongo import CQRSSerializer
+
 from .agents import AgentSerializer
 from .contracts import ContractSerializer
-from .core import REASerializer
 from .resources import ResourceSerializer
 
 
-class IncrementCommitmentSerializer(REASerializer):
+class IncrementCommitmentSerializer(CQRSSerializer):
     """
     Serializer for the `IncrementCommitment` model
     """
@@ -23,7 +24,7 @@ class IncrementCommitmentSerializer(REASerializer):
         )
 
 
-class DecrementCommitmentSerializer(REASerializer):
+class DecrementCommitmentSerializer(CQRSSerializer):
     """
     Serializer for the `DecrementCommitment` model
     """
@@ -38,7 +39,7 @@ class DecrementCommitmentSerializer(REASerializer):
         )
 
 
-class CommitmentSerializer(REASerializer):
+class CommitmentSerializer(CQRSSerializer):
     """
     Serializer for the `Commitment` model
     """

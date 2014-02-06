@@ -2,10 +2,10 @@ from rest_framework import serializers
 
 from rea.models.contracts import Contract, Clause, ClauseRule, Order
 
-from .core import REASerializer
+from cqrs.mongo import CQRSSerializer
 
 
-class OrderSerializer(REASerializer):
+class OrderSerializer(CQRSSerializer):
     """
     Serializer for the `Order` model
     """
@@ -18,7 +18,7 @@ class OrderSerializer(REASerializer):
         )
 
 
-class ContractSerializer(REASerializer):
+class ContractSerializer(CQRSSerializer):
     """
     Serializer for the `ContractContract` model
     """
@@ -31,7 +31,7 @@ class ContractSerializer(REASerializer):
         )
 
 
-class ClauseSerializer(REASerializer):
+class ClauseSerializer(CQRSSerializer):
     """
     Serializer for the `Clause` model
     """
@@ -40,7 +40,7 @@ class ClauseSerializer(REASerializer):
         fields = ( "id", )
 
 
-class ClauseRuleSerializer(REASerializer):
+class ClauseRuleSerializer(CQRSSerializer):
     """
     Serializer for the `ClauseRule` model
     """
@@ -54,7 +54,7 @@ class ClauseRuleSerializer(REASerializer):
         )
 
 
-class ContractClauseSerializer(REASerializer):
+class ContractClauseSerializer(CQRSSerializer):
     """
     Serializer for the `ContractClause` model
     """
