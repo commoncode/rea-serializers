@@ -2,10 +2,10 @@ from rest_framework import serializers
 
 from rea.models.contracts import Contract, ContractClause, Clause, ClauseRuleAspect
 
-from cqrs.mongo import CQRSSerializer
+from cqrs.mongo import CQRSSerializer, CQRSPolymorphicSerializer
 
 
-class ContractSerializer(CQRSSerializer):
+class ContractSerializer(CQRSPolymorphicSerializer):
     '''
     Serializer for the `ContractContract` model
     '''

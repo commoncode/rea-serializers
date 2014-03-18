@@ -1,13 +1,11 @@
 from rea.models.resources import Resource
 
-from cqrs.mongo import CQRSSerializer
+from cqrs.mongo import CQRSPolymorphicSerializer
 
 
-class ResourceSerializer(CQRSSerializer):
-    """
-    Serializer for the `Resource` model
-    """
+class ResourceSerializer(CQRSPolymorphicSerializer):
+    '''
+    Polymorphic serializer for the `Resource` model
+    '''
     class Meta:
         model = Resource
-        fields = ( "id", "title", "slug" )
-
