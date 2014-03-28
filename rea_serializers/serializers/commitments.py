@@ -2,7 +2,7 @@ from rea.models.commitments import (
     Commitment, IncrementCommitment, DecrementCommitment
 )
 
-from cqrs.mongo import CQRSSerializer
+from cqrs.serializers import CQRSSerializer
 
 from .agents import AgentSerializer
 from .contracts import ContractSerializer

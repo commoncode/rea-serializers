@@ -1,4 +1,4 @@
-from cqrs.mongo import CQRSSerializer
+from cqrs.serializers import CQRSSerializer
 
 from rea.models.events import Event, IncrementLine, DecrementLine
 

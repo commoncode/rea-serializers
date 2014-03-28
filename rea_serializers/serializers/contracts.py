@@ -2,14 +2,14 @@ from rest_framework import serializers
 
 from rea.models.contracts import Contract, ContractClause, Clause, ClauseRuleAspect
 
-from cqrs.mongo import CQRSSerializer, CQRSPolymorphicSerializer
+from cqrs.serializers import CQRSSerializer, CQRSPolymorphicSerializer
 
 
 class ContractSerializer(CQRSPolymorphicSerializer):
     '''
     Serializer for the `ContractContract` model
     '''
-    order = serializers.PrimaryKeyRelatedField()
+    # order = serializers.PrimaryKeyRelatedField()
 
     class Meta:
         model = Contract

@@ -1,6 +1,6 @@
 from rea.models.resources import Resource
 
-from cqrs.mongo import CQRSPolymorphicSerializer
+from cqrs.serializers import CQRSPolymorphicSerializer
 
 
 class ResourceSerializer(CQRSPolymorphicSerializer):
