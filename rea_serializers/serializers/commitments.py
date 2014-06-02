@@ -2,51 +2,34 @@ from rea.models.commitments import (
     Commitment, IncrementCommitment, DecrementCommitment
 )
 
-from cqrs.serializers import CQRSSerializer
+from cqrs.serializers import CQRSPolymorphicSerializer
 
 from .agents import AgentSerializer
 from .contracts import ContractSerializer
 from .resources import ResourceSerializer
 
 
-class IncrementCommitmentSerializer(CQRSSerializer):
-    """
-    Serializer for the `IncrementCommitment` model
-    """
+class IncrementCommitmentSerializer(CQRSPolymorphicSerializer):
     providing_agent = AgentSerializer()
     recieving_agent = AgentSerializer()
     resource = ResourceSerializer()
 
     class Meta:
         model = IncrementCommitment
-        fields = (
-            "id", "providing_agent", "recieving_agent", "resource", "quantity"
-        )
 
 
-class DecrementCommitmentSerializer(CQRSSerializer):
-    """
-    Serializer for the `DecrementCommitment` model
-    """
+class DecrementCommitmentSerializer(CQRSPolymorphicSerializer):
     providing_agent = AgentSerializer()
     recieving_agent = AgentSerializer()
     resource = ResourceSerializer()
 
     class Meta:
         model = DecrementCommitment
-        fields = (
-            "id", "providing_agent", "recieving_agent", "resource", "quantity"
-        )
 
 
-class CommitmentSerializer(CQRSSerializer):
-    """
-    Serializer for the `Commitment` model
-    """
+class CommitmentSerializer(CQRSPolymorphicSerializer):
     contract = ContractSerializer()
 
     class Meta:
         model = Commitment
-        fields = (
-            "id", "occured_at", "contract"
-        )
+        exclude = 'increment', 'decrement'
